@@ -1,0 +1,29 @@
+.logo-carousel {
+    text-align: center;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .logo {
+    opacity: 0.5;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  .logo img {
+    max-width: 200px;
+  }
+  
+  .logo.active {
+    opacity: 1;
+    transform: scale(1.2); /* You can customize the scale effect */
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  

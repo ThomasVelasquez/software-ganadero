@@ -1,0 +1,13 @@
+<div class="logo-carousel">
+  <div class="carousel-wrapper">
+    <div
+      *ngFor="let logo of logos; let i = index"
+      class="logo"
+      [class.active]="i === currentIndex"
+    >
+      <img [src]="logo.url" alt="{{ logo.name }}" />
+    </div>
+  </div>
+  <button (click)="prevLogo()">Previous</button>
+  <button (click)="nextLogo()">Next</button>
+</div>
