@@ -1,29 +1,38 @@
-.logo-carousel {
-    text-align: center;
-  }
-  
-  .carousel-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .logo {
-    opacity: 0.5;
-    transition: transform 0.5s, opacity 0.5s;
-  }
+.hide-indicators .carousel-indicators {
+  display: none;
+}
 
-  .logo img {
-    max-width: 200px;
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  animation: carouselAnimation 30s linear infinite;
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+.carousel-item {
+  flex: 1;
+  margin: 0 10px;
+}
+
+img {
+  max-width: 200px;
+  height: auto;
+}
+
+@keyframes carouselAnimation {
+  0% {
+    transform: translateX(100%);
   }
-  
-  .logo.active {
-    opacity: 1;
-    transform: scale(1.2); /* You can customize the scale effect */
+  100% {
+    transform: translateX(-100%);
   }
-  
-  button {
-    margin-top: 10px;
-  }
-  
+} 

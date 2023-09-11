@@ -1,13 +1,14 @@
-<div class="logo-carousel">
-  <div class="carousel-wrapper">
-    <div
-      *ngFor="let logo of logos; let i = index"
-      class="logo"
-      [class.active]="i === currentIndex"
-    >
-      <img [src]="logo.url" alt="{{ logo.name }}" />
-    </div>
+<carousel
+  [itemsPerSlide]="logos.length"
+  [interval]="0"
+  [noWrap]="false"
+  id="carousel"
+  style="height: 500px;"
+  [ngClass]="{ 'hide-indicators': true }"
+  >
+  <div class="carousel">
+    <slide *ngFor="let logo of logos; let index = index" class="carousel-item">
+      <img [src]="logo.url" class="img-fluid" alt="image slide" style="height: 100px;width: 200px;" />
+    </slide>
   </div>
-  <button (click)="prevLogo()">Previous</button>
-  <button (click)="nextLogo()">Next</button>
-</div>
+</carousel>
