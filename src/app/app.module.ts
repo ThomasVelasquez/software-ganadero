@@ -8,12 +8,16 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeComponent } from './views/home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { InteractiveCarouselComponent } from './components/interactive-carousel/interactive-carousel.component';
+import { BigCarouselComponent } from './components/big-carousel/big-carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarouselComponent,
-    HomeComponent
+    HomeComponent,
+    InteractiveCarouselComponent,
+    BigCarouselComponent
   ],
   imports: [
     BrowserModule,

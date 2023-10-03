@@ -1,0 +1,61 @@
+.carousel-indicators [data-bs-target] {
+    position: relative !important;
+    bottom: 630px; 
+    background-color: gray;
+    width: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: green;
+}
+
+.container-title {
+    /* float: left; */
+    position: relative;
+    margin: 0 auto;
+    bottom: 0px;
+    width: 70% !important;
+    display: flex;
+    top: 20px;
+  }
+
+  .active-title {
+    color: green; /* Cambia el color a tu preferencia */
+  }
+
+  .fondo {
+    position: relative;
+    /* z-index: 1;  */
+  }
+
+  .fondo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(to bottom, #05193700, #179464);
+    z-index: 1;
+    border-radius: 40px;
+  }
+
+  .ajuste {
+    width: 80%;
+    margin: auto;
+  }
+
+  .fit {
+    object-fit:cover;
+    height: 100%; 
+    width: 100%;
+    object-position: center;
+  }
+
+  .adjustment-background {
+    z-index: 3;
+  }
+
+  .ajuste-title {
+    float: left;
+  }

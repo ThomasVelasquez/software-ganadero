@@ -1,16 +1,11 @@
 import {
   Component,
   OnInit,
-  ViewEncapsulation,
-  AfterViewInit,
   ViewChild,
 } from '@angular/core';
-import { trigger, transition, animate, style } from '@angular/animations';
-import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
   NgbCarouselConfig,
-  NgbCarouselModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';

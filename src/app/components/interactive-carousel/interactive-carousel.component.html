@@ -1,0 +1,51 @@
+<div class="container-title" style="width: 80%; text-align: center;" >
+  <div
+    class="fw-bold ajuste-title"
+    *ngFor="let logo of carouselItems"
+    style="color: gray; width: 20%;"
+  >
+    <span [ngClass]="{ 'active-title': logo.position === activeAriaLabel }">
+      {{ logo.title }}
+    </span>
+  </div>
+</div>
+
+<ngb-carousel
+  *ngIf="carouselItems"
+  [showNavigationArrows]="showNavigationArrows"
+  [showNavigationIndicators]="showNavigationIndicators"
+  class="mt-5"
+  (slide)="onSlideChange($event)"
+>
+  <ng-template ngbSlide *ngFor="let logo of carouselItems">
+    <div
+      class="picsum-img-wrapper d-flex justify-content-center align-items-center ajuste "
+      [attr.data-slide-id]="logo.id"
+    >
+      <div class="fondo d-flex justify-content-center" >
+        <img
+          [src]="logo.url"
+          alt="Random slide"
+          style="width: 100%; height: 70vh; border-radius: 40px"
+          class="fit"
+        />
+      </div>
+    </div>
+    <div class="carousel-caption d-flex justify-content-between adjustment-background ">
+      <div class="w-75">
+        <p class="text-start" >
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+          sit nam molestiae inventore sequi velit dolores, odio unde quaerat
+          reprehenderit, temporibus sapiente pariatur veritatis, possimus alias
+          beatae? Cumque, ratione quos.
+        </p>
+      </div>
+      <button
+        class="btn w-25 fw-bold"
+        style="background-color: whitesmoke; color: black; font-size: 20px"
+      >
+        Conoce mas
+      </button>
+    </div>
+  </ng-template>
+</ngb-carousel>
