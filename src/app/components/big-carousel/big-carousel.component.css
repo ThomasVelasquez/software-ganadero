@@ -44,3 +44,10 @@
   opacity: 1;
   transform: scale(1);
 }
+
+.carousel-container{
+  perspective: 1000px;
+  transition: transform 0.5s ease-in-out;
+}
+
+
