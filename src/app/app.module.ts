@@ -10,6 +10,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { InteractiveCarouselComponent } from './components/interactive-carousel/interactive-carousel.component';
 import { BigCarouselComponent } from './components/big-carousel/big-carousel.component';
+import { TestCarouselComponent } from './components/test-carousel/test-carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BigCarouselComponent } from './components/big-carousel/big-carousel.com
     CarouselComponent,
     HomeComponent,
     InteractiveCarouselComponent,
-    BigCarouselComponent
+    BigCarouselComponent,
+    TestCarouselComponent
   ],
   imports: [
     BrowserModule,
