@@ -16,15 +16,17 @@
       [showNavigationIndicators]="showNavigationIndicators"
       class="carousel"
     >
-      <ng-template ngbSlide>
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="carousel-content" *ngFor="let logo of logos" >
+      <ng-template ngbSlide >
+        <div class="d-flex justify-content-center align-items-center carousel-container" [ngClass]="{ 'tracking-in-expand': selectedLogo }">
+          <div class="carousel-content"  *ngFor="let logo of logos; let i = index" [ngClass]="{ 'fade-in': logo.selected, 'carousel-animation': animation }" >
             <img
               [src]="logo.url"
               [alt]="logo.name"
               class="carousel-img"
+              *ngIf="!logo.selected"
+              (click)="onImageClick(logo, i)"
             />
-            <div class="content-overlay">
+            <div  *ngIf="logo.showText">
               <h2>Contenido del elemento {{ logos.index + 1 }}</h2>
               <p>{{ logo?.title }}</p>
             </div>
