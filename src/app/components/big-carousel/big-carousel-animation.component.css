@@ -4,12 +4,12 @@
   animation: carouselAnimation 15s linear infinite;
 }
 
-@keyframes carouselAnimation {
+@keyframes carouselAnimation  {
   0% {
-    transform: translateX(-100%); /* Comienza sin desplazamiento horizontal */
+    transform: translateX(0); /* Comienza sin desplazamiento horizontal */
   }
   100% {
-    transform: translateX(100%); /* Desplazamiento horizontal completo hacia la izquierda */
+    transform: translateX(-100%); /* Desplazamiento horizontal completo hacia la izquierda */
   }
 }
 

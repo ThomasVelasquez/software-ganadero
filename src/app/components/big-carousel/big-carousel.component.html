@@ -1,4 +1,23 @@
-<div
+<!-- app/carousel/carousel.component.html -->
+<div class="container">
+  <div class="image-container" id="imageContainer">
+    <div
+      class="image-wrapper scroll-animation"
+      *ngFor="let image of images"
+      (mouseenter)="isMouseEnterEnabled ? onImageHover($event) : null"
+    >
+      <img [src]="image.src" class="gallery-image" [alt]="image.alt" />
+      <div class="content" style="z-index: -1">
+        <h3>Esto es un texto</h3>
+        <button class="close-button" (click)="closeButtonClicked($event)">
+          x
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div content="Este es el contenido {{ image.id }}"
   style="
     background-image: url('assets/images/components/big-carousel/paisajeWEBLARGA.png');
     background-size: cover;
@@ -16,18 +35,31 @@
       [showNavigationIndicators]="showNavigationIndicators"
       class="carousel"
     >
-      <ng-template ngbSlide >
-        <div class="d-flex justify-content-center align-items-center carousel-container" [ngClass]="{ 'tracking-in-expand': selectedLogo }">
-          <div class="carousel-content"  *ngFor="let logo of logos; let i = index" [ngClass]="{ 'fade-in': logo.selected, 'carousel-animation': animation }" >
+      <ng-template ngbSlide>
+        <div
+          class="d-flex justify-content-center align-items-center carousel-container"
+          [ngClass]="{ 'tracking-in-expand': selectedLogo }"
+        >
+          <div
+            class="carousel-content"
+            *ngFor="let logo of logos; let i = index"
+            [ngClass]="{
+              'fade-in': logo.selected,
+              'carousel-animation': animation
+            }"
+          >
             <img
               [src]="logo.url"
               [alt]="logo.name"
               class="carousel-img"
+              [class.stop-animation]="
+                selectedImageIndex !== null && selectedImageIndex !== i
+              "
               *ngIf="!logo.selected"
               (click)="onImageClick(logo, i)"
             />
-            <div  *ngIf="logo.showText">
-              <h2>Contenido del elemento {{ logos.index + 1 }}</h2>
+            <div *ngIf="logo.showText">
+              <h2>Contenido del elementoSS {{ logos.index + 1 }}</h2>
               <p>{{ logo?.title }}</p>
             </div>
           </div>
@@ -35,4 +67,4 @@
       </ng-template>
     </ngb-carousel>
   </div>
-</div>
+</div> -->

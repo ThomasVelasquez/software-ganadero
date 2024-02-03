@@ -22,19 +22,19 @@ export class TestCarouselComponent {
     this.slides.length = this.slides.length - 1;
   }
 
-  slickInit() {
+   slickInit(e: any) {
     console.log('slick initialized');
   }
-
-  breakpoint() {
+  
+  breakpoint(e: any) {
     console.log('breakpoint');
   }
-
-  afterChange() {
+  
+  afterChange(e: any) {
     console.log('afterChange');
   }
-
-  beforeChange() {
+  
+  beforeChange(e: any) {
     console.log('beforeChange');
   }
 }
