@@ -1,10 +1,10 @@
 <div class="d-flex w-50">
-  <div class="container-bg"> </div>
+  <!-- <div class="container-bg"> </div> -->
   <div class="image-container" id="imageContainer" *ngFor="let item of logos">
     <div class="image-wrapper scroll-animation" (mouseenter)="onImageHover($event)">
       <img [src]="item?.url" class="gallery-image" alt="Imagen 1"/>
       <div class="content" style="z-index: -1">
-        <h1>Esto es un texto</h1>
+        <h3>Esto es un texto</h3>
         <p>
           Lorem Ipsum es simplemente el texto de relleno de las imprentas y
           archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de

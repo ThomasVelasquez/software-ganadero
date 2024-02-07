@@ -1,4 +1,4 @@
-/* styles.css */
+/* styles.css
 body {
     margin: 0;
     overflow: hidden;
@@ -125,19 +125,150 @@ body {
       opacity: 1;
     }
   }
-  /* .close-button {
+ 
+  .close-button {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    top: 10px;
+    right: 10px;
     background-color: #e74c3c;
     color: #fff;
     border: none;
-    padding: 30px 40px 30px 40px;
     cursor: pointer;
     font-size: 56px;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    font-size: 27px;
+    z-index: 99999999999!important;
   } */
+
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+  .container-bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-image: url(../../../assets/images/components/test-carousel/img/imagen-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y:bottom ;
+  }
+  .image-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .image-wrapper {
+    position: relative;
+  }
+  
+  .gallery-image {
+    width: 17vw;
+    object-fit: cover;
+    cursor: pointer;
+    padding: 2px;
+    flex-shrink: 0;
+    margin-right: 80px;
+    scroll-snap-align: center;
+  }
+  
+  .scroll-animation {
+    animation: desplazar 15s linear infinite;
+    
+  }
+  
+  .scaler {
+    margin: 3%;
+    transform-origin: center center;
+    transition: transform 0.5s ease-in-out, margin 0.5s ease-in-out;
+  }
+  
+  .revertScaler {
+    margin: 0%;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out, margin 0.5s ease-in-out;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  @keyframes desplazar {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .content {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 36vh;
+    height: 80vh;
+    object-fit: cover;
+    cursor: pointer;
+    padding: 2px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    scroll-snap-align: center;
+    display: none;
+  }
+  
+  .fade-out {
+    -webkit-animation: fade-out 1s ease-out both;
+    animation: fade-out 1s ease-out both;
+  }
+  
+  @-webkit-keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .fade-in {
+    -webkit-animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    z-index: 1;
+    display: block!important;
+  }
+  
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
   
   .close-button {
     position: absolute;

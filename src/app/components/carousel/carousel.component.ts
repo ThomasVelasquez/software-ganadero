@@ -1,21 +1,15 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import {
-  NgbCarouselConfig,
-} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
 })
-export class CarouselComponent implements OnInit{
+export class CarouselComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer, config: NgbCarouselConfig) {}
 
   @ViewChild(NgbCarousel) carousel!: NgbCarousel;
