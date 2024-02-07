@@ -1,38 +1,25 @@
-.hide-indicators .carousel-indicators {
-  display: none;
-}
-
 .carousel-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  width: 100%; /* Tamaño deseado del contenedor */
+  overflow: hidden; /* Ocultar el desbordamiento */
+  position: relative; /* Permitir que los elementos hijos sean posicionados con respecto a este contenedor */
+  height: 200px; /* Altura deseada del contenedor */
 }
 
-.carousel {
-  display: flex;
-  gap: 20px;
-  animation: carouselAnimation 30s linear infinite;
-}
-
-.carousel-inner {
-  display: flex;
+.carousel-content {
+  display: flex; /* Hacer que el contenido sea un contenedor flexible */
+  animation: carouselAnimation 15s linear infinite; /* Aplicar animación horizontal */
 }
 
 .carousel-item {
-  flex: 1;
-  margin: 0 10px;
-}
-
-img {
-  max-width: 200px;
-  height: auto;
+  flex: 0 0 auto; /* Hacer que los elementos del carrusel no se ajusten al tamaño del contenedor */
+  margin-right: 10px; /* Espacio entre elementos */
 }
 
 @keyframes carouselAnimation {
   0% {
-    transform: translateX(100%);
+    transform: translateX(-100%); /* Comienza sin desplazamiento horizontal */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(100%); /* Desplazamiento horizontal completo hacia la izquierda */
   }
-} 
+}

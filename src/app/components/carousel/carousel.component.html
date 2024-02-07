@@ -1,14 +1,22 @@
-<carousel
-  [itemsPerSlide]="logos.length"
-  [interval]="0"
-  [noWrap]="false"
-  id="carousel"
-  style="height: 500px;"
-  [ngClass]="{ 'hide-indicators': true }"
-  >
-  <div class="carousel">
-    <slide *ngFor="let logo of logos; let index = index" class="carousel-item">
-      <img [src]="logo.url" class="img-fluid" alt="image slide" style="height: 100px;width: 200px;" />
-    </slide>
+<div class="picsum-img-wrapper">
+  <div class="carousel-container">
+    <ngb-carousel
+      [showNavigationArrows]="showNavigationArrows"
+      [showNavigationIndicators]="showNavigationIndicators"
+      class="carousel"
+    >
+      <ng-template ngbSlide>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="carousel-content">
+            <img
+              *ngFor="let logo of logos"
+              [src]="logo.url"
+              [alt]="logo.name"
+              style="max-width: 100%; margin-right: 10px;"
+            />
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
   </div>
-</carousel>
+</div>
