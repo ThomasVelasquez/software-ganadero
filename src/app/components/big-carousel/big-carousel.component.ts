@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { right } from '@popperjs/core';
 
+/* Carrusel */
+
 @Component({
   selector: 'app-big-carousel',
   templateUrl: './big-carousel.component.html',
