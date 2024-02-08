@@ -44,8 +44,14 @@ body {
   transition: transform 1.3s ease-in-out, margin 1.3s ease-in-out;
 }
 
-.container {
+.__container {
   display: flex;
+  height: 100vh;
+  background-image: url("https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 @keyframes desplazar {
@@ -58,6 +64,7 @@ body {
 }
 
 .content {
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -116,7 +123,13 @@ body {
   }
 }
 .close-button {
+  cursor: pointer;
   position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+
+  /* position: absolute;
   bottom: -70px;
   left: 130px;
   background-color: #e74c3c;
@@ -126,7 +139,19 @@ body {
   cursor: pointer;
   font-size: 0.9rem;
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.modal-content {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Estilo para hacer el borde del modal transparente */
+.modal-dialog {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* .carousel {

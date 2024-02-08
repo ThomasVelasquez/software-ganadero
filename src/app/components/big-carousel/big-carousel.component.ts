@@ -5,7 +5,10 @@ import {
   ElementRef,
   ViewChild,
   Renderer2,
+  inject,
+  TemplateRef,
 } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-big-carousel',
@@ -15,10 +18,13 @@ import {
 export class BigCarouselComponent implements AfterViewInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   isMouseEnterEnabled = true;
+  @ViewChild('content') contentTemplate?: TemplateRef<any>;
+  private modalService = inject(NgbModal);
+
   images = [
     {
       id: 1,
-      src: 'https://img.freepik.com/foto-gratis/leon-melena-arcoiris-ojos-azules_1340-39421.jpg',
+      src: 'https://png.pngtree.com/background/20230524/original/pngtree-sad-pictures-for-desktop-hd-backgrounds-picture-image_2705986.jpg',
       alt: 'Imagen 1',
     },
     {
@@ -28,7 +34,7 @@ export class BigCarouselComponent implements AfterViewInit {
     },
     {
       id: 3,
-      src: 'https://img.freepik.com/foto-gratis/leon-melena-arcoiris-ojos-azules_1340-39421.jpg',
+      src: 'https://png.pngtree.com/background/20230524/original/pngtree-sad-pictures-for-desktop-hd-backgrounds-picture-image_2705986.jpg',
       alt: 'Imagen 3',
     },
     {
@@ -53,6 +59,10 @@ export class BigCarouselComponent implements AfterViewInit {
     this.cloneImages();
   }
 
+  openVerticallyCentered(content: TemplateRef<any>) {
+    this.modalService.open(content, { centered: true });
+  }
+
   cloneImages() {
     const imageContainer =
       this.el.nativeElement.querySelector('#imageContainer');
@@ -69,6 +79,10 @@ export class BigCarouselComponent implements AfterViewInit {
     const element = event.currentTarget as HTMLElement;
     const contentElement = element.querySelector('.content');
     const imgElement = element.querySelector('.gallery-image');
+
+    if (this.contentTemplate) {
+      this.openVerticallyCentered(this.contentTemplate);
+    }
 
     // Obtén la referencia al contenedor de imágenes y desactívales la animación
     const images = this.el.nativeElement.querySelectorAll('.image-wrapper');
