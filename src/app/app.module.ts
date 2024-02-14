@@ -10,7 +10,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { InteractiveCarouselComponent } from './components/interactive-carousel/interactive-carousel.component';
 import { BigCarouselComponent } from './components/big-carousel/big-carousel.component';
-import { TestCarouselComponent } from './components/test-carousel/test-carousel.component';
+// import { TestCarouselComponent } from './components/test-carousel/test-carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HomeComponent,
     InteractiveCarouselComponent,
     BigCarouselComponent,
-    TestCarouselComponent
+    // TestCarouselComponent
   ],
   imports: [
     BrowserModule,
