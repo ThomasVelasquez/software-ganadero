@@ -1,33 +1,44 @@
 <!-- app/carousel/carousel.component.html -->
 <div class="__container">
+  <div class="container-bg"></div>
   <div class="image-container" id="imageContainer">
     <div
-      class="image-wrapper scroll-animation"
+      class="image-wrapper scroll-animation mt-5"
       *ngFor="let image of images"
       (mouseenter)="isMouseEnterEnabled ? onImageHover($event) : null"
     >
       <img [src]="image.src" class="gallery-image" [alt]="image.alt" />
-      <div class="content" style="z-index: -1">
-        <button
-          #closeButton
-          class="close-button btn-close"
-          (click)="closeButtonClicked($event)"
-        ></button>
-        <!-- <div class="card bg-transparent text-center"> -->
-        <div class="card bg-transparent">
-          <!-- <div class="card-header">Featured</div> -->
+      <div class="content mt-5 d-flex" style="z-index: -1">
+        <div class="card bg-transparent border border-0">
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
               quia minus nesciunt expedita aspernatur vitae omnis. Et neque
               voluptate at praesentium maxime reprehenderit, non magnam deserunt
-              magni dolorum, mollitia iste.
+              magni dolorum, mollitia iste. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Dolores quo eaque nihil quia
+              asperiores perspiciatis aperiam praesentium, quidem, sed, quis
+              tempora temporibus totam necessitatibus saepe blanditiis. Cumque
+              eligendi veritatis ex!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+              quia minus nesciunt expedita aspernatur vitae omnis. Et neque
+              voluptate at praesentium maxime reprehenderit, non magnam deserunt
+              magni dolorum, mollitia iste. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Dolores quo eaque nihil quia
+              asperiores perspiciatis aperiam praesentium, quidem, sed, quis
+              tempora temporibus totam necessitatibus saepe blanditiis. Cumque
+              eligendi veritatis ex!
             </p>
-            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
-          <!-- <div class="card-footer text-muted">2 days ago</div> -->
         </div>
+        <button
+          #closeButton
+          class="btn btn-danger h-25 w-25"
+          (click)="closeButtonClicked($event)"
+        >
+          x
+        </button>
       </div>
     </div>
   </div>

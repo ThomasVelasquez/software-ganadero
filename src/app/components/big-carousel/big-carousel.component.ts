@@ -105,10 +105,12 @@ export class BigCarouselComponent implements AfterViewInit {
   }
 
   closeButtonClicked(event: MouseEvent) {
+    // console.log(event,'evento');
+    
     const element = event.currentTarget as HTMLElement;
     const contentElement = element.parentNode as HTMLElement;
 
-    // contentElement.classList.add("z-index-n1");
+    contentElement.classList.add("z-index-n1");
 
     const parentContainer = contentElement?.parentNode as HTMLElement;
 
